@@ -8,7 +8,7 @@ COPY . /go/src/k8s.io/kube-state-metrics/
 
 RUN make build-local
 
-FROM gcr.io/pch18/baota:latest-${GOARCH}
+FROM gcr.io/pch18/baota-${GOARCH}
 COPY --from=builder /go/src/k8s.io/kube-state-metrics/kube-state-metrics /
 
 USER nobody
